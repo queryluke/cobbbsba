@@ -1,0 +1,12 @@
+{
+  "short_name": "CoBBBSBA",
+  "name": "The Crypts of Blood Bashing, Bone Smashing, Brain Awesomeness!!! (*guitar noise*)",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#F2D19F",
+  "theme_color": "#F2D19F"
+}

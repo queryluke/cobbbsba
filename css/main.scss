@@ -1,0 +1,162 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "simple-grid.scss";
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700&display=swap');
+
+h1, h2, h3, h4, h5, h6, p.lead {
+  font-family: 'Cinzel', serif;
+}
+
+#title-container {
+  height: 300px;
+}
+#welcome {
+  width: 40%;
+  transform: rotate(-25deg);
+}
+#crypts, #blood, #bone, #brain, #guitar {
+  position: absolute;
+}
+#crypts {
+  width: 50%;
+  top: 7%;
+  left: 25%;
+}
+#brain {
+  width: 115%;
+  height: 31%;
+  left: -7%;
+  top: 52%;
+}
+#bone {
+  width: 100%;
+  top: 35%;
+  left: 8%;
+}
+#blood {
+  width: 100%;
+  top: 18%;
+  left: -7%;
+}
+#guitar {
+  width: 40%;
+  transform: rotate(-15deg);
+  top: 76%;
+  right: 0;
+}
+
+@media only screen and (min-width: 440px) {
+  #title-container {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 645px) {
+  #title-container {
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #title-container {
+    height: 600px;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  #title-container {
+    height: 700px;
+  }
+}
+
+@media only screen and (min-width: 1068px) {
+  #title-container {
+    height: 838px;
+  }
+}
+
+// Colors
+$white: #F2D19F;
+
+body {
+  background-color: $white;
+}
+
+.hidden {
+  display: none;
+}
+
+.fancy-button {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.7em;
+  color: #fff705;
+  border: 4px outset #fff705;
+  background-color: #8a0000;
+  padding: 2px;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+
+  &:hover {
+    // box-shadow: 0 0 20px 10px rgba(230, 30, 10, 0.6);
+    animation: burn 1000ms ease-out forwards;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      width: 100px;
+      height: 40px;
+      background: rgba(255, 230, 110, 1);
+      border-radius: 100%;
+      animation: flare 1000ms ease-out forwards;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 40px;
+      width: 100px;
+      height: 40px;
+      background: rgba(255, 230, 110, 1);
+      border-radius: 100%;
+      animation: flare 1000ms ease-out forwards;
+    }
+  }
+}
+
+@keyframes flare {
+  100% {
+    transform: translateY(-20px) scale(1.5);
+    filter: blur(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes burn {
+  0% {
+    color: rgba(255, 130, 110, 1);
+    background: rgba(255, 230, 110, 1);
+    box-shadow:
+            0 0 5px 0 rgba(200, 0, 10, 1),
+            0 0 5px 0 rgba(230, 30, 10, 0.8),
+            0 0 5px 0 rgba(230, 230, 10, 0.6);
+  }
+
+  100% {
+    color: #fff705;
+    background: #8a0000;
+    box-shadow:
+            0 -35px 40px 30px rgba(255, 130, 10, 0),
+            0 -30px 30px 10px rgba(230, 30, 10, 0),
+            0 -20px 10px 0 rgba(255, 255, 10, 0);
+  }
+}

@@ -1,0 +1,29 @@
+---
+layout: master
+---
+<div class="container">
+    <div class="row">
+        <div class="col-12 center">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="center col-12">
+            <iframe
+                    style="width:100%;height:730px;"
+                    frameborder="0"
+                    src="https://docs.google.com/drawings/d/{{ page.drawing_id }}/edit?usp=embed_googleplus&rm=minimal">
+            </iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <em>
+                {{ page.description }}
+            </em>
+        </div>
+    </div>
+    <div class="row hidden">
+        {{ content }}
+    </div>
+</div>

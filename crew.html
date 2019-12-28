@@ -1,0 +1,43 @@
+---
+layout: master
+---
+<div class="container">
+    <div class="center row">
+        <div class="col-12">
+            <h1>Your Crew</h1>
+        </div>
+        <div class="col-12" style="display: flex; justify-content: center;">
+            <a href="{{ '/' | relative_url }}" class="fancy-button">
+                Home
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 3em;">
+    {% for crew in site.data.crew %}
+        <div class="row" >
+            <div class="col-4">
+                <img style="width: 100%; height: auto;" src="images/{{ crew.img }}">
+            </div>
+            <div class="col-8">
+                <h3 style="margin: 0 0 -5px 0;">{{ crew.name }}</h3>
+                <h4 style="margin: 0 0 -5px 0;">
+                    <small>
+                        <em>
+                            {{ crew.level }}-level {{ crew.race }} {{ crew.class }} <small>(<a href="{{ crew.link }}" target="_blank">view</a>)</small>
+                        </em>
+                    </small>
+                </h4>
+                <h5 style="margin: 0 0 -5px 0;"><em>Played by: {{ crew.player }}</em></h5>
+                <ul style="list-style: none;padding-left: 15px; text-indent: -15px;">
+                    <li><strong>Offense</strong>: {{ crew.offense }}</li>
+                    <li><strong>Running because</strong> {{ crew.running }}</li>
+                    <li>
+                        <strong>Backstory</strong>: {{ crew.backstory }}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
